@@ -21,13 +21,6 @@ void GPIO_Configuration(void)
 		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
 		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 		GPIO_Init(GPIOA, &GPIO_InitStructure);
-
-
-
-		GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;
-		GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-		GPIO_Init(GPIOB, &GPIO_InitStructure);
  
 }
  
@@ -62,6 +55,7 @@ int main(void)
       while(1)
       {
         
+						// 正传
 					 GPIO_ResetBits(GPIOA, GPIO_Pin_6);
 					 GPIO_ResetBits(GPIOA, GPIO_Pin_7);
 					 GPIO_ResetBits(GPIOA, GPIO_Pin_8);
@@ -72,6 +66,8 @@ int main(void)
 					 
 					 Delay(0xEFFFFF);
 					 
+					 
+					 // 暂停
 					 GPIO_SetBits(GPIOA, GPIO_Pin_6);
 					 GPIO_SetBits(GPIOA, GPIO_Pin_7);
 					 GPIO_SetBits(GPIOA, GPIO_Pin_8);
@@ -82,6 +78,8 @@ int main(void)
 					 
 					 Delay(0xEFFFFF);
 					 
+					 
+					 //反转
 					 GPIO_ResetBits(GPIOA, GPIO_Pin_9);
 					 GPIO_ResetBits(GPIOA, GPIO_Pin_10);
 					 GPIO_ResetBits(GPIOA, GPIO_Pin_11);
@@ -92,6 +90,7 @@ int main(void)
 					 
 					 Delay(0xEFFFFF);
 					 
+					 // 暂停
 					 GPIO_SetBits(GPIOA, GPIO_Pin_6);
 					 GPIO_SetBits(GPIOA, GPIO_Pin_7);
 					 GPIO_SetBits(GPIOA, GPIO_Pin_8);
